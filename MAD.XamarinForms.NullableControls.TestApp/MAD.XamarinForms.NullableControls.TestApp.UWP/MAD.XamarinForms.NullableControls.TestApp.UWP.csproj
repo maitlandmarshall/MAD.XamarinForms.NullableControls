@@ -145,10 +145,14 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.12"/>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.12" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MAD.XamarinForms.NullableControls\MAD.XamarinForms.NullableControls.csproj">
+      <Project>{0718e04d-e8ba-4307-8ef9-c5cada638710}</Project>
+      <Name>MAD.XamarinForms.NullableControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MAD.XamarinForms.NullableControls.TestApp\MAD.XamarinForms.NullableControls.TestApp.csproj">
       <Project>{D4276DD2-0420-4914-827D-CE52B25FABAF}</Project>
       <Name>MAD.XamarinForms.NullableControls.TestApp</Name>

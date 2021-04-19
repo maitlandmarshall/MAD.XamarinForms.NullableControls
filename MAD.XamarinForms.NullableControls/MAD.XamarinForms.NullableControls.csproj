@@ -2,7 +2,12 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;xamarinios10;monoandroid10.0;</TargetFrameworks>
+    <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">$(TargetFrameworks);uap10.0.16299;</TargetFrameworks>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Authors>Maitland Marshall</Authors>
+    <Company>MAIT DEV</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>0.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,11 +32,7 @@
 
     <Compile Include="**\*.uap.cs" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="NullableCheckbox.shared.cs" />
-  </ItemGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
   </ItemGroup>

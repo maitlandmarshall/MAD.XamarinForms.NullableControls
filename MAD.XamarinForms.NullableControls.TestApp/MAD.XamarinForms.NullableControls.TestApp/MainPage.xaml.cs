@@ -13,6 +13,7 @@ namespace MAD.XamarinForms.NullableControls.TestApp
         public MainPage()
         {
             InitializeComponent();
+            this.Content.BindingContext = new MainPageViewModel();
         }
     }
 }
