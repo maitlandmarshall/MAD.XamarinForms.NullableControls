@@ -16,12 +16,24 @@ namespace MAD.XamarinForms.NullableControls.TestApp
         }
 
         private bool? isChecked;
+        private DateTime? date;
+
         public bool? IsChecked
         {
             get => this.isChecked;
             set
             {
                 this.isChecked = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public DateTime? Date
+        {
+            get => this.date;
+            set
+            {
+                this.date = value;
                 this.OnPropertyChanged();
             }
         }

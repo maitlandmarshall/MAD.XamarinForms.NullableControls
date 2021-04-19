@@ -5,11 +5,15 @@
              x:Class="MAD.XamarinForms.NullableControls.TestApp.MainPage">
 
     <StackLayout Orientation="Vertical">
-        <Label Text="Hello" />
 
         <StackLayout Orientation="Horizontal">
             <Label>Nullable Checkbox</Label>
             <nullablecontrols:NullableCheckBox IsChecked="{Binding IsChecked}"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label>Nullable Date Picker</Label>
+            <nullablecontrols:NullableDatePicker Date="{Binding Date}" />
         </StackLayout>
     </StackLayout>
 
