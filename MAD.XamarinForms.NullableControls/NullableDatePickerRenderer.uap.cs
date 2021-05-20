@@ -23,7 +23,7 @@ namespace MAD.XamarinForms.NullableControls
                     Date = this.Element.Date
                 };
 
-                nativeDatePicker.DateChanged += this.OnControlDateChanged;
+                nativeDatePicker.DateChanged += this.NativeDatePicker_DateChanged;
 
                 this.SetNativeControl(nativeDatePicker);
             }
@@ -46,7 +46,7 @@ namespace MAD.XamarinForms.NullableControls
             this.Control.Date = this.Element.Date;
         }
 
-        private void OnControlDateChanged(CalendarDatePicker sender, CalendarDatePickerDateChangedEventArgs args)
+        private void NativeDatePicker_DateChanged(CalendarDatePicker sender, CalendarDatePickerDateChangedEventArgs args)
         {
             this.Element.Date = this.Control.Date?.DateTime;
         }
@@ -56,7 +56,7 @@ namespace MAD.XamarinForms.NullableControls
             if (disposing 
                 && this.Control != null)
             {
-                this.Control.DateChanged -= this.OnControlDateChanged;
+                this.Control.DateChanged -= this.NativeDatePicker_DateChanged;
             }
 
             base.Dispose(disposing);

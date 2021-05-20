@@ -14,5 +14,17 @@ namespace MAD.XamarinForms.NullableControls
             get => this.GetValue(DateProperty) as DateTime?;
             set => this.SetValue(DateProperty, value);
         }
+
+        protected override SizeRequest OnMeasure(double widthConstraint, double heightConstraint)
+        {
+            if (widthConstraint == double.PositiveInfinity)
+                widthConstraint = 0;
+
+            if (heightConstraint == double.PositiveInfinity)
+                heightConstraint = 0;
+
+            var sizeRequest = base.OnMeasure(widthConstraint, heightConstraint);
+            return sizeRequest;
+        }
     }
 }

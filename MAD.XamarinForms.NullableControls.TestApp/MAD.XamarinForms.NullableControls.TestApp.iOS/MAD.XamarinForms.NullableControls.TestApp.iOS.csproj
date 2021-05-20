@@ -128,6 +128,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\..\MAD.XamarinForms.NullableControls\MAD.XamarinForms.NullableControls.csproj">
+      <Project>{0718e04d-e8ba-4307-8ef9-c5cada638710}</Project>
+      <Name>MAD.XamarinForms.NullableControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MAD.XamarinForms.NullableControls.TestApp\MAD.XamarinForms.NullableControls.TestApp.csproj">
       <Project>{D4276DD2-0420-4914-827D-CE52B25FABAF}</Project>
       <Name>MAD.XamarinForms.NullableControls.TestApp</Name>

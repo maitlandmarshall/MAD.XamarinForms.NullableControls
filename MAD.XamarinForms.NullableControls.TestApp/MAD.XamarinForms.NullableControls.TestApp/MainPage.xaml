@@ -7,8 +7,10 @@
     <StackLayout Orientation="Vertical">
 
         <StackLayout Orientation="Horizontal">
-            <Label>Nullable Checkbox</Label>
-            <nullablecontrols:NullableCheckBox IsChecked="{Binding IsChecked}"/>
+            <Label VerticalTextAlignment="Center">Nullable Checkbox</Label>
+            <nullablecontrols:NullableCheckBox IsChecked="{Binding IsChecked}"
+                                               HeightRequest="50"
+                                               VerticalOptions="Center"/>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal">

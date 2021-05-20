@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:MAD.XamarinForms.NullableControls"
+             x:Class="MAD.XamarinForms.NullableControls.NullableCheckBox"
+             x:Name="root">
+
+    <ContentView.Resources>
+
+        <Style TargetType="Label">
+            <Setter Property="FontFamily"
+                    Value="FA-R" />
+        </Style>
+
+        <x:String x:Key="NullStateIcon">&#xf146;</x:String>
+        <x:String x:Key="FalseStateIcon">&#xf0c8;</x:String>
+        <x:String x:Key="TrueStateIcon">&#xf14a;</x:String>
+
+        <local:NullableBoolToIntConverter x:Key="NullableBoolToIntConverter"/>
+
+    </ContentView.Resources>
+
+    <Grid>
+
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+        </Grid.GestureRecognizers>
+        
+        <Label FontSize="Large"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center">
+
+            <Label.Triggers>
+                <DataTrigger TargetType="Label"
+                             Binding="{Binding IsChecked, Source={x:Reference root}, Converter={StaticResource NullableBoolToIntConverter}}"
+                             Value="-1">
+
+                    <Setter Property="Text"
+                            Value="{StaticResource NullStateIcon}"/>
+
+                </DataTrigger>
+
+                <DataTrigger TargetType="Label"
+                             Binding="{Binding IsChecked, Source={x:Reference root}, Converter={StaticResource NullableBoolToIntConverter}}"
+                             Value="0">
+
+                    <Setter Property="Text"
+                            Value="{StaticResource FalseStateIcon}"/>
+
+                </DataTrigger>
+
+                <DataTrigger TargetType="Label"
+                             Binding="{Binding IsChecked, Source={x:Reference root}, Converter={StaticResource NullableBoolToIntConverter}}"
+                             Value="1">
+
+                    <Setter Property="Text"
+                            Value="{StaticResource TrueStateIcon}"/>
+
+                </DataTrigger>
+            </Label.Triggers>
+            
+        </Label>
+
+    </Grid>
+
+</ContentView>
