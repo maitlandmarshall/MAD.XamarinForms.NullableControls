@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -23,6 +23,7 @@
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+	<IntermediateOutputPath>C:\Playground\NullableControlsTestApp</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -87,10 +88,14 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MAD.XamarinForms.NullableControls\MAD.XamarinForms.NullableControls.csproj">
+      <Project>{0718e04d-e8ba-4307-8ef9-c5cada638710}</Project>
+      <Name>MAD.XamarinForms.NullableControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MAD.XamarinForms.NullableControls.TestApp\MAD.XamarinForms.NullableControls.TestApp.csproj">
       <Project>{D4276DD2-0420-4914-827D-CE52B25FABAF}</Project>
       <Name>MAD.XamarinForms.NullableControls.TestApp</Name>
     </ProjectReference>
   </ItemGroup>
- <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
