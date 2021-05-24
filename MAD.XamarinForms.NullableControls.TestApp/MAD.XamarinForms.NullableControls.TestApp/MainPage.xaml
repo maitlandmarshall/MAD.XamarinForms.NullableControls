@@ -14,8 +14,10 @@
         </StackLayout>
 
         <StackLayout Orientation="Horizontal">
-            <Label>Nullable Date Picker</Label>
-            <nullablecontrols:NullableDatePicker Date="{Binding Date}" />
+            <Label VerticalTextAlignment="Center">Nullable Date Picker</Label>
+            <nullablecontrols:NullableDatePicker Date="{Binding Date}"
+                                                 WidthRequest="200"
+                                                 BorderColor="Green"/>
         </StackLayout>
     </StackLayout>
 
