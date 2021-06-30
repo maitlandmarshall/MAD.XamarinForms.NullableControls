@@ -19,6 +19,9 @@
                                                  WidthRequest="200"
                                                  BorderColor="Green"/>
         </StackLayout>
+
+        <Button Text="Clear"
+                Clicked="Button_Clicked"/>
     </StackLayout>
 
 </ContentPage>

@@ -33,25 +33,8 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Text="{Binding Date, Source={x:Reference root}, StringFormat='{0:d}', Mode=TwoWay}"
-                       HorizontalTextAlignment="Center">
-
-                    <Label.Triggers>
-                        <DataTrigger TargetType="Label"
-                                     Binding="{Binding Date, Source={x:Reference root}, Converter={StaticResource NullableToBoolConverter}}"
-                                     Value="False">
-
-                            <Setter Property="Text"
-                                    Value="select a date"/>
-
-                            <Setter Property="TextColor"
-                                Value="#666666"/>
-
-                        </DataTrigger>
-
-                    </Label.Triggers>
-
-                </Label>
+                <Label Text="{Binding DateDisplay}"
+                       HorizontalTextAlignment="Center"/>
 
                 <Label Text="{StaticResource CalendarIcon}"
                    FontFamily="FA-R"

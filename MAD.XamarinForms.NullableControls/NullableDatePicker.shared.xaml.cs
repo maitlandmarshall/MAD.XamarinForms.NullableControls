@@ -16,10 +16,14 @@ namespace MAD.XamarinForms.NullableControls
         public static BindableProperty DateProperty = BindableProperty.Create(nameof(Date), typeof(DateTime?), typeof(NullableDatePicker), defaultBindingMode: BindingMode.TwoWay);
         public static BindableProperty FormatProperty = BindableProperty.Create(nameof(Format), typeof(string), typeof(NullableDatePicker), "D");
         public static BindableProperty BorderColorProperty = BindableProperty.Create(nameof(BorderColor), typeof(Color), typeof(NullableDatePicker), Color.FromHex("#666666"));
+        private readonly NullableDatePickerViewModel viewModel;
 
         public NullableDatePicker()
         {
             InitializeComponent();
+
+            this.viewModel = new NullableDatePickerViewModel();
+            this.Content.BindingContext = this.viewModel;
         }
 
         public DateTime? Date
@@ -48,6 +52,23 @@ namespace MAD.XamarinForms.NullableControls
         private void HiddenDatePicker_Unfocused(object sender, FocusEventArgs e)
         {
             this.Date = this.HiddenDatePicker.Date;
+        }
+
+        protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            base.OnPropertyChanged(propertyName);
+
+            if (propertyName == nameof(this.Date))
+            {
+                if (this.Date.HasValue)
+                {
+                    this.viewModel.DateDisplay = this.Date.Value.ToString("d");
+                }
+                else
+                {
+                    this.viewModel.DateDisplay = "select a date";
+                }
+            }
         }
     }
 }
